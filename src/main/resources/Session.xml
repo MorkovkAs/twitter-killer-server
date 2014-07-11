@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="ru.pmsoft.twitterkiller.domain.entity.UserSession" table="sessions">
+        <id name="id" type="int">
+            <column name="ID"/>
+            <generator class="increment"/>
+        </id>
+        <property name="token" type="text">
+            <column name="TOKEN" not-null="true" unique="true"/>
+        </property>
+        <property name="expiration" type="java.util.Date">
+            <column name="EXPIRATION" not-null="true"/>
+        </property>
+        <property name="userId" type="int">
+            <column name="USER_ID" not-null="true"/>
+        </property>
+
+
+    </class>
+</hibernate-mapping>
